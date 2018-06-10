@@ -2,10 +2,6 @@
 @import '../../styles/mixins';
 
 .home-image-list {
-  padding: 15px;
-  @media (max-width: @screen-xs-max) {
-    padding: 5px;
-  }
   .image-list {
     margin: 0;
     .image-item {
@@ -14,19 +10,15 @@
         padding: 5px;
       }
       .item-content {
-        color: #999999;
         background-color: #ffffff;
-        box-shadow: 0 0 2px #cccccc;
+        box-shadow: 0 0 2px #cfd8dc;
         border-radius: 2px;
         padding: 10px;
-        margin-bottom: 10px;
-        font-size: 12px;
         @media (max-width: @screen-xs-max) {
           padding: 5px;
-          margin-bottom: 5px;
-          font-size: 11px;
         }
         .item-img {
+          background-color: #cfd8dc;
           background-position: center;
           background-repeat: no-repeat;
           background-size: cover;
@@ -38,37 +30,23 @@
             margin-bottom: 5px;
           }
         }
-        .item-stat {
-          line-height: 1;
-          .stat {
-            display: inline-block;
-            margin-right: 15px;
-            &:last-child {
-              margin-right: 0;
-            }
+        .item-user {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          .user-link {
+            font-size: 13px;
+            font-weight: bold;
             @media (max-width: @screen-xs-max) {
-              margin-right: 10px;
+              font-size: 12px;
             }
-          }
-        }
-      }
-      .item-user {
-        padding-left: 10px;
-        @media (max-width: @screen-xs-max) {
-          padding-left: 5px;
-        }
-        .user-link {
-          font-size: 13px;
-          font-weight: bold;
-          @media (max-width: @screen-xs-max) {
-            font-size: 12px;
-          }
-          .user-avatar {
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-            vertical-align: text-bottom;
-            margin-right: 5px;
+            .user-avatar {
+              width: 15px;
+              height: 15px;
+              border-radius: 50%;
+              vertical-align: text-bottom;
+              margin-right: 5px;
+            }
           }
         }
       }

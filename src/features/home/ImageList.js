@@ -1,129 +1,38 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import userDefaultImage from '../../images/user-default.png';
+import { Col, Row } from 'react-bootstrap';
 
 export default class ImageList extends Component {
   static propTypes = {
-
+    imageList: PropTypes.array,
   };
 
   render() {
     return (
       <div className="home-image-list">
-        <div className="row image-list">
-          <div className="col-xs-6 col-sm-4 col-md-3 image-item">
-            <div className="item-content">
-              <div className="item-img" style={{ backgroundImage: 'url(https://media2.giphy.com/media/bbs0P60ks0AZ1zOUhx/100.gif)' }} />
-              <div className="item-stat">
-                <span className="pull-right">
-                  <span className="stat"><i className="glyphicon glyphicon-eye-open" /> 7,693</span>
-                  <span className="stat"><i className="glyphicon glyphicon-comment" /> 30</span>
-                  <span className="stat"><i className="glyphicon glyphicon-heart" /> 901</span>
-                </span>
-                <i className="glyphicon glyphicon-paperclip" />
+        <Row className="image-list">
+          {this.props.imageList.map((image, index) => (
+            <Col key={index} xs={6} sm={4} md={3} className="image-item">
+              <div className="item-content">
+                <div className="item-img" style={{ backgroundImage: `url(${image.images.fixed_height_still.url})` }} />
+                <div className="item-user">
+                  {image.user ? (
+                    <a className="user-link" href={image.user.profile_url} target="_blank" rel="noopener">
+                      <img className="user-avatar" src={image.user.avatar_url} alt=""/>
+                      <span>{image.user.display_name}</span>
+                    </a>
+                  ) : (
+                    <span className="user-link">
+                      <img className="user-avatar" src={userDefaultImage} alt="" />
+                      <span className="text-muted">N/A</span>
+                    </span>
+                  )}
+                </div>
               </div>
-            </div>
-            <div className="item-user">
-              <a className="user-link">
-                <img className="user-avatar" src="https://media.giphy.com/avatars/comedycentral/XCQBE9EqWbb2.jpg" alt="" />
-                <span>John Doe</span>
-              </a>
-            </div>
-          </div>
-          <div className="col-xs-6 col-sm-4 col-md-3 image-item">
-            <div className="item-content">
-              <div className="item-img" style={{ backgroundImage: 'url(https://media2.giphy.com/media/bbs0P60ks0AZ1zOUhx/100.gif)' }} />
-              <div className="item-stat">
-                <span className="pull-right">
-                  <span className="stat"><i className="glyphicon glyphicon-eye-open" /> 7,693</span>
-                  <span className="stat"><i className="glyphicon glyphicon-comment" /> 30</span>
-                  <span className="stat"><i className="glyphicon glyphicon-heart" /> 901</span>
-                </span>
-                <i className="glyphicon glyphicon-paperclip" />
-              </div>
-            </div>
-            <div className="item-user">
-              <a className="user-link">
-                <img className="user-avatar" src="https://media.giphy.com/avatars/comedycentral/XCQBE9EqWbb2.jpg" alt="" />
-                <span>John Doe</span>
-              </a>
-            </div>
-          </div>
-          <div className="col-xs-6 col-sm-4 col-md-3 image-item">
-            <div className="item-content">
-              <div className="item-img" style={{ backgroundImage: 'url(https://media2.giphy.com/media/bbs0P60ks0AZ1zOUhx/100.gif)' }} />
-              <div className="item-stat">
-                <span className="pull-right">
-                  <span className="stat"><i className="glyphicon glyphicon-eye-open" /> 7,693</span>
-                  <span className="stat"><i className="glyphicon glyphicon-comment" /> 30</span>
-                  <span className="stat"><i className="glyphicon glyphicon-heart" /> 901</span>
-                </span>
-                <i className="glyphicon glyphicon-paperclip" />
-              </div>
-            </div>
-            <div className="item-user">
-              <a className="user-link">
-                <img className="user-avatar" src="https://media.giphy.com/avatars/comedycentral/XCQBE9EqWbb2.jpg" alt="" />
-                <span>John Doe</span>
-              </a>
-            </div>
-          </div>
-          <div className="col-xs-6 col-sm-4 col-md-3 image-item">
-            <div className="item-content">
-              <div className="item-img" style={{ backgroundImage: 'url(https://media2.giphy.com/media/bbs0P60ks0AZ1zOUhx/100.gif)' }} />
-              <div className="item-stat">
-                <span className="pull-right">
-                  <span className="stat"><i className="glyphicon glyphicon-eye-open" /> 7,693</span>
-                  <span className="stat"><i className="glyphicon glyphicon-comment" /> 30</span>
-                  <span className="stat"><i className="glyphicon glyphicon-heart" /> 901</span>
-                </span>
-                <i className="glyphicon glyphicon-paperclip" />
-              </div>
-            </div>
-            <div className="item-user">
-              <a className="user-link">
-                <img className="user-avatar" src="https://media.giphy.com/avatars/comedycentral/XCQBE9EqWbb2.jpg" alt="" />
-                <span>John Doe</span>
-              </a>
-            </div>
-          </div>
-          <div className="col-xs-6 col-sm-4 col-md-3 image-item">
-            <div className="item-content">
-              <div className="item-img" style={{ backgroundImage: 'url(https://media2.giphy.com/media/bbs0P60ks0AZ1zOUhx/100.gif)' }} />
-              <div className="item-stat">
-                <span className="pull-right">
-                  <span className="stat"><i className="glyphicon glyphicon-eye-open" /> 7,693</span>
-                  <span className="stat"><i className="glyphicon glyphicon-comment" /> 30</span>
-                  <span className="stat"><i className="glyphicon glyphicon-heart" /> 901</span>
-                </span>
-                <i className="glyphicon glyphicon-paperclip" />
-              </div>
-            </div>
-            <div className="item-user">
-              <a className="user-link">
-                <img className="user-avatar" src="https://media.giphy.com/avatars/comedycentral/XCQBE9EqWbb2.jpg" alt="" />
-                <span>John Doe</span>
-              </a>
-            </div>
-          </div>
-          <div className="col-xs-6 col-sm-4 col-md-3 image-item">
-            <div className="item-content">
-              <div className="item-img" style={{ backgroundImage: 'url(https://media2.giphy.com/media/bbs0P60ks0AZ1zOUhx/100.gif)' }} />
-              <div className="item-stat">
-                <span className="pull-right">
-                  <span className="stat"><i className="glyphicon glyphicon-eye-open" /> 7,693</span>
-                  <span className="stat"><i className="glyphicon glyphicon-comment" /> 30</span>
-                  <span className="stat"><i className="glyphicon glyphicon-heart" /> 901</span>
-                </span>
-                <i className="glyphicon glyphicon-paperclip" />
-              </div>
-            </div>
-            <div className="item-user">
-              <a className="user-link">
-                <img className="user-avatar" src="https://media.giphy.com/avatars/comedycentral/XCQBE9EqWbb2.jpg" alt="" />
-                <span>John Doe</span>
-              </a>
-            </div>
-          </div>
-        </div>
+            </Col>
+          ))}
+        </Row>
       </div>
     );
   }

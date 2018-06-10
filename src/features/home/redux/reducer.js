@@ -1,6 +1,8 @@
 import initialState from './initialState';
+import { reducer as fetchImageListReducer } from './fetchImageList';
 
 const reducers = [
+  fetchImageListReducer,
 ];
 
 export default function reducer(state = initialState, action) {
