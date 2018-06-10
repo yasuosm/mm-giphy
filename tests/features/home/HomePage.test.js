@@ -5,7 +5,12 @@ import { HomePage } from '../../../src/features/home/HomePage';
 describe('home/HomePage', () => {
   it('renders node with correct class name', () => {
     const props = {
-      home: {},
+      home: {
+        fetchImageListPending: false,
+        fetchImageListError: null,
+        imageList: [],
+        imageListPagination: { count: 0, offset: 0 },
+      },
       actions: {},
     };
     const renderedComponent = shallow(

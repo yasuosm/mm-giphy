@@ -64,10 +64,10 @@ describe('home/redux/fetchImageList', () => {
   });
 
   it('handles action type HOME_FETCH_IMAGE_LIST_SUCCESS correctly', () => {
-    const prevState = { fetchImageListPending: true };
+    const prevState = { fetchImageListPending: true, imageList: [] };
     const state = reducer(
       prevState,
-      { type: HOME_FETCH_IMAGE_LIST_SUCCESS, data: {} }
+      { type: HOME_FETCH_IMAGE_LIST_SUCCESS, data: { data: [], pagination: {} } }
     );
     expect(state).not.toBe(prevState); // should be immutable
     expect(state.fetchImageListPending).toBe(false);

@@ -3,6 +3,6 @@ import { shallow } from 'enzyme';
 import { ImageList } from '../../../src/features/home';
 
 it('renders node with correct class name', () => {
-  const renderedComponent = shallow(<ImageList />);
+  const renderedComponent = shallow(<ImageList imageList={[]} />);
   expect(renderedComponent.find('.home-image-list').length).toBe(1);
 });
