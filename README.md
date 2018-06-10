@@ -14,6 +14,13 @@ A React.js test for MM
 
 Application created with [Rekit](http://rekit.js.org/)
 
+```sh
+npm install
+npm start
+```
+
+`npm start` will start a development server at http://localhost:6075
+
 ## Deployment
 
 ```sh
