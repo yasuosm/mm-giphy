@@ -1,0 +1,22 @@
+@import '../../styles/mixins';
+
+.home-image-user {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+  .user-link {
+    font-size: 13px;
+    font-weight: bold;
+    @media (max-width: @screen-xs-max) {
+      font-size: 12px;
+    }
+    .user-avatar {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      vertical-align: text-bottom;
+      margin-right: 5px;
+    }
+  }
+}
